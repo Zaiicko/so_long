@@ -6,7 +6,7 @@
 #    By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/05 21:55:06 by zaiicko           #+#    #+#              #
-#    Updated: 2024/09/12 20:03:04 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/09/16 21:15:43 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ INC_MLX = -I/opt/X11/include -I$(MINILIBX_DIR)
 MLX_FLAGS = -Lminilibx -lmlx -L/usr/x11/lib -lXext -lX11 -framework OpenGL -framework AppKit
 
 SRCS =	main.c\
+	utils.c\
+	loading_sprite.c\
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 
