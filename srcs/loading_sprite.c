@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 03:35:12 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/16 20:57:32 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/17 04:31:25 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 int	loading_all_sprites(t_data *data)
 {
 	loading_a_sprite(data, &data->sprites.ground,
-		"/Users/zaiicko/Dev/42_Cursus/so_long/sprites/ground.xpm");
+		"sprites/ground.xpm");
 	loading_a_sprite(data, &data->sprites.player_left,
-		"/Users/zaiicko/Dev/42_Cursus/so_long/sprites/player_left.xpm");
+		"sprites/player_left.xpm");
 	loading_a_sprite(data, &data->sprites.player_right,
-		"/Users/zaiicko/Dev/42_Cursus/so_long/sprites/player_right.xpm");
+		"sprites/player_right.xpm");
 	loading_a_sprite(data, &data->sprites.player_back,
-		"/Users/zaiicko/Dev/42_Cursus/so_long/sprites/player_back.xpm");
+		"sprites/player_back.xpm");
 	loading_a_sprite(data, &data->sprites.exit,
-		"/Users/zaiicko/Dev/42_Cursus/so_long/sprites/exit.xpm");
+		"sprites/exit.xpm");
 	loading_a_sprite(data, &data->sprites.collec,
-		"/Users/zaiicko/Dev/42_Cursus/so_long/sprites/collec.xpm");
+		"sprites/collec.xpm");
 	loading_a_sprite(data, &data->sprites.wall,
-		"/Users/zaiicko/Dev/42_Cursus/so_long/sprites/wall.xpm");
+		"sprites/wall.xpm");
 	return (0);
 }
 
