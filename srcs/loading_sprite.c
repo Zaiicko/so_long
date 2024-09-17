@@ -6,13 +6,13 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 03:35:12 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/17 04:31:25 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/17 16:05:38 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-int	loading_all_sprites(t_data *data)
+void	loading_all_sprites(t_data *data)
 {
 	loading_a_sprite(data, &data->sprites.ground,
 		"sprites/ground.xpm");
@@ -28,7 +28,6 @@ int	loading_all_sprites(t_data *data)
 		"sprites/collec.xpm");
 	loading_a_sprite(data, &data->sprites.wall,
 		"sprites/wall.xpm");
-	return (0);
 }
 
 void	loading_a_sprite(t_data *data, void **sprite, char *path)
