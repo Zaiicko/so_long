@@ -6,14 +6,14 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/17 19:52:06 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/17 23:12:49 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
 void	extract_ber_data(t_data *data, char *name)
-{
+{ 
 	int	fd;
 	size_t	i;
 	char	*line;
@@ -25,6 +25,8 @@ void	extract_ber_data(t_data *data, char *name)
 	line = get_next_line(fd);
 	while (line)
 	{
+		if (line[ft_strlen(line) - 1] == '\n')
+			line[ft_strlen(line) - 1] = '\0';
 		data->map.map_data[i] = line;
 		line = get_next_line(fd);
 		i++;
@@ -40,4 +42,5 @@ void	loading_map(t_data *data, char *name)
 	data->map.height = 0;
 	while (data->map.map_data[data->map.height])
 		data->map.height++;
+	check_map(data);
 }

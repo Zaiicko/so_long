@@ -6,7 +6,7 @@
 #    By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/05 21:55:06 by zaiicko           #+#    #+#              #
-#    Updated: 2024/09/17 20:33:37 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/09/17 22:36:59 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS =	main.c\
 	loading_sprite.c\
 	args_checker.c\
 	loading_map.c\
+	map_checker.c\
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 
