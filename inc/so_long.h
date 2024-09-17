@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/17 18:08:07 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/17 20:29:39 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	key_pressed(int keysym, t_data *data);
 void	loading_all_sprites(t_data *data);
 void	loading_a_sprite(t_data *data, void **sprite, char *path);
 void	error_msg(char *msg);
-void	args_parser(int ac, char **av);
+void	check_args(int ac, char **av)
 int	check_if_ber(char *name);
 void	loading_map(t_data *data, char *name);
 void	extract_ber_data(t_data *data, char *name);
