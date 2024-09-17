@@ -6,7 +6,7 @@
 #    By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/05 21:55:06 by zaiicko           #+#    #+#              #
-#    Updated: 2024/09/17 16:36:18 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/09/17 20:33:37 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ MLX_FLAGS = -Lminilibx -lmlx -L/usr/x11/lib -lXext -lX11 -framework OpenGL -fram
 SRCS =	main.c\
 	utils.c\
 	loading_sprite.c\
-	parser.c\
+	args_checker.c\
 	loading_map.c\
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
