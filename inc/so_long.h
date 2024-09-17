@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/17 16:06:41 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/17 18:08:07 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@
 # define LEFT_KEY 123
 # define RIGHT_KEY 124
 
-/*typedef struct s_map
+typedef struct s_map
 {
-	
-}*/
+	char	**map_data;
+	int	width;
+	int	height;
+}	t_map;
 
 typedef struct s_sprites
 {
@@ -46,6 +48,7 @@ typedef struct s_data
 	void	*mlx_ptr;
 	void	*win_ptr;
 	t_sprites	sprites;
+	t_map		map;
 }	t_data;
 
 int	key_pressed(int keysym, t_data *data);
@@ -54,3 +57,5 @@ void	loading_a_sprite(t_data *data, void **sprite, char *path);
 void	error_msg(char *msg);
 void	args_parser(int ac, char **av);
 int	check_if_ber(char *name);
+void	loading_map(t_data *data, char *name);
+void	extract_ber_data(t_data *data, char *name);
