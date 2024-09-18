@@ -6,19 +6,20 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 23:14:38 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 23:57:31 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
 void	extract_ber_data(t_data *data, char *name)
-{ 
-	int	fd;
-	size_t	i;
+{
+	int		fd;
+	int		i;
 	char	*line;
 
-	data->map.map_data = (char **)malloc(sizeof(char *) * (data->map.height + 1));
+	data->map.map_data = (char **)malloc(sizeof(char *)
+			* (data->map.height + 1));
 	if (!data->map.map_data)
 		error_msg("Malloc failed");
 	i = 0;

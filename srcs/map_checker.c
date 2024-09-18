@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 21:10:25 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 23:42:01 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 23:52:51 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,12 @@ void	check_wall(t_data *data)
 	}
 	while (y < data->map.height)
 	{
-		if(data->map.map_data[y][0] != '1')
+		if (data->map.map_data[y][0] != '1')
 			error_msg("The map need to be surrounded by walls");
 		else if (data->map.map_data[y][data->map.width - 1] != '1')
 			error_msg("The map need to be surrounded by walls");
 		y++;
 	}
-
 }
 
 void	check_if_valid_char(char *line)
@@ -47,7 +46,7 @@ void	check_if_valid_char(char *line)
 	i = 0;
 	if (line[0] == '\0')
 		error_msg("Empty line in ber file");
-	while(line[i])
+	while (line[i])
 	{
 		if (!ft_strchr(VALID_CHARS, line[i]))
 			error_msg("Wrong char in the ber file");
@@ -59,7 +58,6 @@ void	check_gameobjects(t_data *data)
 {
 	int	i;
 	int	j;
-	
 
 	i = 0;
 	data->map.p_count = 0;
@@ -80,7 +78,8 @@ void	check_gameobjects(t_data *data)
 		}
 		i++;
 	}
-	if (data->map.p_count != 1 || data->map.e_count != 1 || data->map.c_count < 1)
+	if (data->map.p_count != 1 || data->map.e_count
+		!= 1 || data->map.c_count < 1)
 		error_msg("The map have not enough or too much gameobjects");
 }
 
