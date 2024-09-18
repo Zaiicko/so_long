@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 04:41:52 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 20:44:14 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void	loading_map(t_data *data, char *name)
 {
 	extract_ber_data(data, name);
 	init_map_size(data);
+	check_gameobjects(data);
 }

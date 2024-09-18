@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 21:10:25 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 04:38:56 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 20:43:56 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,41 @@ void	check_if_valid_char(char *line)
 	i = 0;
 	if (line[0] == '\0')
 		error_msg("Empty line in ber file");
-	while(line[i] != '\n' && line[i])
+	while(line[i])
 	{
 		if (!ft_strchr(VALID_CHARS, line[i]))
 			error_msg("Wrong char in the ber file");
 		i++;
 	}
+}
+
+void	check_gameobjects(t_data *data)
+{
+	int	i;
+	int	j;
+	
+
+	i = 0;
+	data->map.p_count = 0;
+	data->map.e_count = 0;
+	data->map.c_count = 0;
+	while (i < data->map.height)
+	{
+		j = 0;
+		while (data->map.map_data[i][j])
+		{
+			if (data->map.map_data[i][j] == 'P')
+				data->map.p_count++;
+			else if (data->map.map_data[i][j] == 'E')
+				data->map.e_count++;
+			else if (data->map.map_data[i][j] == 'C')
+				data->map.c_count++;
+			j++;
+		}
+		i++;
+	}
+	if (data->map.p_count != 1 || data->map.e_count != 1 || data->map.c_count < 1)
+		error_msg("The map have not enough or too much gameobjects");
 }
 
 void	check_lines_width(t_data *data)
