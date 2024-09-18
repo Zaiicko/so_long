@@ -6,21 +6,39 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 21:10:25 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 21:43:20 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 23:42:01 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-/*void	check_wall(t_data *data)
+void	check_wall(t_data *data)
 {
-	size_t	y;
-	size_t	x;
+	int	y;
+	int	x;
 
 	y = 0;
 	x = 0;
+	while (x < data->map.width)
+	{
+		if (data->map.map_data[0][x] != '1')
+		{
+			error_msg("The map need to be surrounded by walls");
+		}
+		else if (data->map.map_data[data->map.height - 1][x] != '1')
+			error_msg("The map need to be surrounded by walls");
+		x++;
+	}
+	while (y < data->map.height)
+	{
+		if(data->map.map_data[y][0] != '1')
+			error_msg("The map need to be surrounded by walls");
+		else if (data->map.map_data[y][data->map.width - 1] != '1')
+			error_msg("The map need to be surrounded by walls");
+		y++;
+	}
 
-}*/
+}
 
 void	check_if_valid_char(char *line)
 {
@@ -81,5 +99,5 @@ void	check_lines_width(t_data *data)
 			error_msg("Lines width are not uniform");
 		i++;
 	}
-	data->map.width = ft_strlen(data->map.map_data[0]) - 1;
+	data->map.width = ft_strlen(data->map.map_data[0]);
 }

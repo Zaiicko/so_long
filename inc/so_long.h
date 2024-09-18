@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 21:46:03 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 23:14:15 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,4 @@ void	check_if_valid_char(char *line);
 void	check_lines_width(t_data *data);
 void	check_gameobjects(t_data *data);
 void	count_lines(t_data *data, char *name);
+void	check_wall(t_data *data);
