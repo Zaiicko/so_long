@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 03:58:00 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 04:41:52 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,11 @@ void	extract_ber_data(t_data *data, char *name)
 
 void	init_map_size(t_data *data)
 {
-	data->map.width = ft_strlen(data->map.map_data[0]) - 1;
 	data->map.height = 0;
 	while (data->map.map_data[data->map.height])
 		data->map.height++;
+	check_lines_width(data);
+	data->map.width = ft_strlen(data->map.map_data[0]) - 1;
 }
 
 void	loading_map(t_data *data, char *name)
