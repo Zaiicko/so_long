@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 20:44:25 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 21:46:03 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ int	check_if_ber(char *name);
 void	loading_map(t_data *data, char *name);
 void	extract_ber_data(t_data *data, char *name);
 void	check_if_valid_char(char *line);
-void	check_map(t_data *data);
 void	check_lines_width(t_data *data);
 void	check_gameobjects(t_data *data);
+void	count_lines(t_data *data, char *name);

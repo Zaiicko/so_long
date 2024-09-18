@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 21:10:25 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 20:43:56 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 21:43:20 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,5 @@ void	check_lines_width(t_data *data)
 			error_msg("Lines width are not uniform");
 		i++;
 	}
-
+	data->map.width = ft_strlen(data->map.map_data[0]) - 1;
 }
