@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/17 22:44:32 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/18 04:00:15 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,5 @@ void	check_args(int ac, char **av);
 int	check_if_ber(char *name);
 void	loading_map(t_data *data, char *name);
 void	extract_ber_data(t_data *data, char *name);
-void	check_if_valid_char(t_data *data);
+void	check_if_valid_char(char *line);
 void	check_map(t_data *data);
