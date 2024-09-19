@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 19:12:12 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 22:15:38 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,10 @@ void	loading_map(t_data *data, char *name)
 	check_gameobjects(data);
 	check_wall(data);
 	check_if_finishable(data);
+	check_screen_size(data);
+	data->win_ptr = mlx_new_window(data->mlx_ptr, data->screen_width, data->screen_height, "Nibiru");
+	if (!data->win_ptr)
+		error_msg("Can't create the window with mlx");
 	render_floor(data);
 	render_map(data);
 }

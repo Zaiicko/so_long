@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 19:10:24 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 22:15:26 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@
 # define VALID_CHARS "01CEP"
 # define HEIGHT_MACB_SCREEN 864
 # define WIDTH_MACB_SCREEN 1440 
-# define HEIGHT_19_SCREEN 1080
-# define WIDTH_19_SCREEN 1920
 # define TILE_SIZE 96
 
 typedef struct s_map
@@ -58,6 +56,8 @@ typedef struct s_data
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
+	int	screen_height;
+	int	screen_width;
 	t_sprites	sprites;
 	t_map		map;
 }	t_data;
@@ -82,3 +82,4 @@ void	check_after_back(t_data *data, char **map);
 void	count_objects(t_data *data, int y);
 void	render_floor(t_data *data);
 void	render_map(t_data *data);
+void	check_screen_size(t_data *data);
