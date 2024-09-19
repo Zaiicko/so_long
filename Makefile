@@ -6,7 +6,7 @@
 #    By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/05 21:55:06 by zaiicko           #+#    #+#              #
-#    Updated: 2024/09/17 22:36:59 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/09/19 01:50:24 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS =	main.c\
 	args_checker.c\
 	loading_map.c\
 	map_checker.c\
+	map_checker2.c\
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 

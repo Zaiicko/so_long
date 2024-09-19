@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 23:57:31 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 02:22:38 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,5 @@ void	loading_map(t_data *data, char *name)
 	check_lines_width(data);
 	check_gameobjects(data);
 	check_wall(data);
+	check_if_finishable(data);
 }

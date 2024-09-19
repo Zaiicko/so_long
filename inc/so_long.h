@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/18 23:14:15 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 02:24:51 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct s_map
 	int	p_count;
 	int	e_count;
 	int	c_count;
+	int	y_player;
+	int	x_player;
 }	t_map;
 
 typedef struct s_sprites
@@ -68,3 +70,7 @@ void	check_lines_width(t_data *data);
 void	check_gameobjects(t_data *data);
 void	count_lines(t_data *data, char *name);
 void	check_wall(t_data *data);
+void	check_if_finishable(t_data *data);
+char	**tab_dup(char **tab, size_t len);
+void	back_tracking(char **map, int y, int x);
+void	check_after_back(t_data *data, char **map);
