@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 02:22:38 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 19:12:12 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,54 @@ void	extract_ber_data(t_data *data, char *name)
 	close(fd);
 }
 
+void	render_floor(t_data *data)
+{
+	int	y;
+	int	x;
+
+	y = 0;
+	while (y < HEIGHT_MACB_SCREEN)
+	{
+		x = 0;
+		while (x < WIDTH_MACB_SCREEN)
+		{
+			mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
+				data->sprites.ground, x, y);
+			x += data->sprites.width;
+		}
+		y += data->sprites.height;
+	}
+}
+
+void	render_map(t_data *data)
+{
+	int	y;
+	int	x;
+
+	y = 0;
+	while (data->map.map_data[y])
+	{
+		x = 0;
+		while (data->map.map_data[y][x])
+		{
+			if (data->map.map_data[y][x] == '1')
+				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
+					data->sprites.wall, x * TILE_SIZE, y * TILE_SIZE);
+			else if (data->map.map_data[y][x] == 'P')
+				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
+					data->sprites.player_right, x * TILE_SIZE, y * TILE_SIZE);
+			else if (data->map.map_data[y][x] == 'E')
+				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
+					data->sprites.exit, x * TILE_SIZE, y * TILE_SIZE);
+			else if (data->map.map_data[y][x] == 'C')
+				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
+					data->sprites.collec, x * TILE_SIZE, y * TILE_SIZE);
+			x++;
+		}
+		y++;
+	}
+}
+
 void	loading_map(t_data *data, char *name)
 {
 	count_lines(data, name);
@@ -48,4 +96,6 @@ void	loading_map(t_data *data, char *name)
 	check_gameobjects(data);
 	check_wall(data);
 	check_if_finishable(data);
+	render_floor(data);
+	render_map(data);
 }
