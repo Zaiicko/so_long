@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 03:40:14 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 02:28:33 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 04:28:40 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	count_lines(t_data *data, char *name)
 		if (c == '\n')
 			i++;
 	}
- 	close(fd);
+	close(fd);
 	data->map.height = i;
 }
 
@@ -59,10 +59,9 @@ char	**tab_dup(char **tab, size_t len)
 	while (i < len)
 	{
 		new_tab[i] = ft_strdup(tab[i]);
-		if(!new_tab[i])
+		if (!new_tab[i])
 			return (ft_free_tab(new_tab), NULL);
 		i++;
-
 	}
 	new_tab[i] = NULL;
 	return (new_tab);

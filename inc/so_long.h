@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 02:24:51 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 04:30:50 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,4 @@ void	check_if_finishable(t_data *data);
 char	**tab_dup(char **tab, size_t len);
 void	back_tracking(char **map, int y, int x);
 void	check_after_back(t_data *data, char **map);
+void	count_objects(t_data *data, int y);

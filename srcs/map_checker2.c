@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:49:17 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 03:50:30 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 04:31:11 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	back_tracking(char **map, int y, int x)
 {
 	map[y][x] = 'G';
 	if (map[y + 1][x] != 'G' && map[y + 1][x] != '1')
-		back_tracking(map, y + 1,x);
+		back_tracking(map, y + 1, x);
 	if (map[y - 1][x] != 'G' && map[y - 1][x] != '1')
 		back_tracking(map, y - 1, x);
 	if (map[y][x + 1] != 'G' && map[y][x + 1] != '1')
@@ -41,5 +41,26 @@ void	check_after_back(t_data *data, char **map)
 			x++;
 		}
 		y++;
+	}
+}
+
+void	count_objects(t_data *data, int y)
+{
+	int	x;
+
+	x = 0;
+	while (data->map.map_data[y][x])
+	{
+		if (data->map.map_data[y][x] == 'P')
+		{
+			data->map.p_count++;
+			data->map.y_player = y;
+			data->map.x_player = x;
+		}
+		else if (data->map.map_data[y][x] == 'E')
+			data->map.e_count++;
+		else if (data->map.map_data[y][x] == 'C')
+			data->map.c_count++;
+		x++;
 	}
 }

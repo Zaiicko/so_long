@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 21:10:25 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 02:39:59 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 04:31:01 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void	check_if_valid_char(char *line)
 void	check_gameobjects(t_data *data)
 {
 	int	y;
-	int	x;
 
 	y = 0;
 	data->map.p_count = 0;
@@ -77,22 +76,7 @@ void	check_gameobjects(t_data *data)
 	data->map.c_count = 0;
 	while (y < data->map.height)
 	{
-		x = 0;
-		while (data->map.map_data[y][x])
-		{
-			if (data->map.map_data[y][x] == 'P')
-			{
-				data->map.p_count++;
-				data->map.y_player = y;
-				data->map.x_player = x;
-
-			}
-			else if (data->map.map_data[y][x] == 'E')
-				data->map.e_count++;
-			else if (data->map.map_data[y][x] == 'C')
-				data->map.c_count++;
-			x++;
-		}
+		count_objects(data, y);
 		y++;
 	}
 	if (data->map.p_count != 1 || data->map.e_count
