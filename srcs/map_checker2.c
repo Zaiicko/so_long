@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:49:17 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 22:15:17 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/20 01:07:14 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ void	count_objects(t_data *data, int y)
 
 void	check_screen_size(t_data *data)
 {
-	data->screen_height = data->map.height * 96;
-	data->screen_width = data->map.width * 96;
-	if ((data->screen_height > HEIGHT_MACB_SCREEN) || (data->screen_width > WIDTH_MACB_SCREEN))
+	data->screen_height = data->map.height * TILE_SIZE;
+	data->screen_width = data->map.width * TILE_SIZE;
+	if ((data->screen_height > HEIGHT_MACB_SCREEN)
+		|| (data->screen_width > WIDTH_MACB_SCREEN))
 		error_msg("The map are too huge for the screen size");
-		
 }

@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 22:15:26 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/19 22:28:54 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,3 +83,4 @@ void	count_objects(t_data *data, int y);
 void	render_floor(t_data *data);
 void	render_map(t_data *data);
 void	check_screen_size(t_data *data);
+void	hook_managing(t_data *data);

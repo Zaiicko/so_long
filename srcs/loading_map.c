@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 22:15:38 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/20 01:10:21 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,6 @@ void	render_map(t_data *data)
 			if (data->map.map_data[y][x] == '1')
 				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 					data->sprites.wall, x * TILE_SIZE, y * TILE_SIZE);
-			else if (data->map.map_data[y][x] == 'P')
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-					data->sprites.player_right, x * TILE_SIZE, y * TILE_SIZE);
 			else if (data->map.map_data[y][x] == 'E')
 				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 					data->sprites.exit, x * TILE_SIZE, y * TILE_SIZE);
@@ -86,6 +83,9 @@ void	render_map(t_data *data)
 		}
 		y++;
 	}
+	mlx_put_image_to_window(data->mlx_ptr,
+		data->win_ptr, data->sprites.player_right,
+		data->map.x_player * TILE_SIZE, data->map.y_player * TILE_SIZE);
 }
 
 void	loading_map(t_data *data, char *name)
@@ -97,7 +97,8 @@ void	loading_map(t_data *data, char *name)
 	check_wall(data);
 	check_if_finishable(data);
 	check_screen_size(data);
-	data->win_ptr = mlx_new_window(data->mlx_ptr, data->screen_width, data->screen_height, "Nibiru");
+	data->win_ptr = mlx_new_window(data->mlx_ptr, data->screen_width,
+			data->screen_height, "Nibiru");
 	if (!data->win_ptr)
 		error_msg("Can't create the window with mlx");
 	render_floor(data);
