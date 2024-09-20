@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 03:35:12 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/17 16:05:38 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/20 03:21:23 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	loading_all_sprites(t_data *data)
 		"sprites/collec.xpm");
 	loading_a_sprite(data, &data->sprites.wall,
 		"sprites/wall.xpm");
+	loading_a_sprite(data, &data->sprites.exit_open,
+		"sprites/exit_open.xpm");
 }
 
 void	loading_a_sprite(t_data *data, void **sprite, char *path)
