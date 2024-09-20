@@ -6,14 +6,32 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 04:48:22 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/20 03:55:31 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/20 04:27:41 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
+void	good_player_sprite(t_data *data, int y, int x)
+{
+	if (y > data->map.y_player)
+	{
+		if (data->sprites.player_current == data->sprites.player_left)
+			data->sprites.player_current = data->sprites.player_left;
+		else
+			data->sprites.player_current = data->sprites.player_right;
+	}
+	if (y < data->map.y_player)
+		data->sprites.player_current = data->sprites.player_back;
+	if (x > data->map.x_player)
+		data->sprites.player_current = data->sprites.player_right;
+	if (x < data->map.x_player)
+		data->sprites.player_current = data->sprites.player_left;
+}
+
 void	moves(t_data *data, int y, int x)
 {
+	good_player_sprite(data, y, x);
 	if (data->map.map_data[y][x] != '1')
 	{
 		data->map.y_player = y;

@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/20 01:10:21 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/20 04:14:04 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	render_map(t_data *data)
 		y++;
 	}
 	mlx_put_image_to_window(data->mlx_ptr,
-		data->win_ptr, data->sprites.player_right,
+		data->win_ptr, data->sprites.player_current,
 		data->map.x_player * TILE_SIZE, data->map.y_player * TILE_SIZE);
 }
 

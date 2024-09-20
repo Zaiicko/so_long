@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/20 03:20:30 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/20 04:29:15 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_sprites
 	void	*player_left;
 	void	*player_right;
 	void	*player_back;
+	void	*player_current;
 	void	*exit;
 	void	*exit_open;
 	void	*collec;
@@ -86,3 +87,4 @@ void	render_map(t_data *data);
 void	check_screen_size(t_data *data);
 void	hook_managing(t_data *data);
 void	destroy_sprites(t_data *data);
+void	good_player_sprite(t_data *data, int y, int x);
