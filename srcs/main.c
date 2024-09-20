@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 03:10:35 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/20 04:16:43 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/20 04:48:04 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	t_data data;
+	t_data	data;
 
 	check_args(ac, av);
 	data.mlx_ptr = mlx_init();
