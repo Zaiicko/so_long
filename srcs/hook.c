@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 04:48:22 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/20 03:38:42 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/20 03:55:31 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,4 @@ void	hook_managing(t_data *data)
 	mlx_key_hook(data->win_ptr, key_pressed, data);
 	mlx_hook(data->win_ptr, 17, 0, (void *)exit, 0);
 	mlx_loop(data->mlx_ptr);
-	destroy_sprites(data);
-	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 }
