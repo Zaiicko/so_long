@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 04:48:22 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/20 04:27:41 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/21 02:42:07 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void	moves(t_data *data, int y, int x)
 		data->map.x_player = x;
 		if (data->map.map_data[y][x] == 'C')
 		{
+			if (data->map.c_count == 1)
+				data->sprites.exit = data->sprites.exit_open;
 			data->map.map_data[y][x] = '0';
 			data->map.c_count--;
 		}
 		render_floor(data);
 		render_map(data);
-		if (data->map.c_count == 0)
-			data->sprites.exit = data->sprites.exit_open;
 		if (data->map.c_count == 0 && data->map.map_data[y][x] == 'E')
 		{
 			mlx_destroy_window(data->mlx_ptr, data->win_ptr);
