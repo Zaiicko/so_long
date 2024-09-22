@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 03:40:14 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/22 21:58:45 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/22 22:40:39 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ void	cleanup_and_exit(t_data *data)
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 //	mlx_destroy_display(data->mlx_ptr);
 	free(data->mlx_ptr);
+	exit(0);
 }

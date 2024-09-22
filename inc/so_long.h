@@ -6,25 +6,47 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/22 21:59:02 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/22 22:41:15 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/inc/libft.h"
-#include "../minilibx/mlx.h"
+#ifndef SO_LONG_H
+#define SO_LONG_H
 
-# define ESC_KEY 53
-# define W_KEY 13
-# define S_KEY 1
-# define A_KEY 0
-# define D_KEY 2
-# define UP_KEY 126
-# define DOWN_KEY 125
-# define LEFT_KEY 123
-# define RIGHT_KEY 124
+#ifdef __linux__
+
+	#include "../libft/inc/libft.h"
+	#include "../minilibx_linux/mlx.h"
+	# define ESC_KEY 65307
+	# define W_KEY 119
+	# define S_KEY 115
+	# define A_KEY 97
+	# define D_KEY 100
+	# define UP_KEY 65362
+	# define DOWN_KEY 65364
+	# define LEFT_KEY 65361
+	# define RIGHT_KEY 65363
+
+#elif __APPLE__
+
+	#include "../libft/inc/libft.h"
+	#include "../minilibx/mlx.h"
+	# define ESC_KEY 53
+	# define W_KEY 13
+	# define S_KEY 1
+	# define A_KEY 0
+	# define D_KEY 2
+	# define UP_KEY 126
+	# define DOWN_KEY 125
+	# define LEFT_KEY 123
+	# define RIGHT_KEY 124
+
+#endif
+
+# define CLOSE_BUTTON 17
 # define VALID_CHARS "01CEP"
 # define HEIGHT_MACB_SCREEN 864
-# define WIDTH_MACB_SCREEN 1440 
+# define WIDTH_MACB_SCREEN 1440
 # define TILE_SIZE 96
 
 typedef struct s_map
@@ -89,3 +111,5 @@ void	destroy_sprites(t_data *data);
 void	good_player_sprite(t_data *data, int y, int x);
 void	cleanup(t_data *data);
 void	cleanup_and_exit(t_data *data);
+
+#endif
