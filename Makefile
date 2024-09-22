@@ -6,7 +6,7 @@
 #    By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/05 21:55:06 by zaiicko           #+#    #+#              #
-#    Updated: 2024/09/19 22:30:22 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/09/22 15:56:05 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,15 +15,28 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -g
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
-MINILIBX_DIR = minilibx
-MINILIBX = $(MINILIBX_DIR)/libmlx.a
+
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S), Linux)
+    # Variables pour Linux
+    MLX_FLAGS = -lX11 -lXext -lm -lbsd
+    MINILIBX_DIR = ./minilibx_linux
+    MINILIBX = $(MINILIBX_DIR)/libmlx_Linux.a
+    INC_MLX = -I$(MINILIBX_DIR)
+else ifeq ($(UNAME_S), Darwin)
+    # Variables pour macOS
+    MLX_FLAGS = -framework OpenGL -framework AppKit
+    MINILIBX_DIR = ./minilibx
+    MINILIBX = $(MINILIBX_DIR)/libmlx.a
+    INC_MLX = -I$(MINILIBX_DIR)
+endif
+
 INC_DIR = inc
 INC = -I$(INC_DIR) -I$(LIBFT_DIR)
 SRC_DIR = srcs
 OBJ_DIR = obj
 RM = rm -rf
-INC_MLX = -I/opt/X11/include -I$(MINILIBX_DIR)
-MLX_FLAGS = -Lminilibx -lmlx -L/usr/x11/lib -lXext -lX11 -framework OpenGL -framework AppKit
 
 SRCS =	main.c\
 	utils.c\
@@ -38,7 +51,7 @@ SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-all: logo $(NAME) 
+all: logo $(NAME)
 
 $(NAME):	$(OBJ) $(LIBFT) $(MINILIBX)
 		@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MINILIBX)  $(MLX_FLAGS) -o $(NAME)
@@ -77,5 +90,5 @@ logo:
 	@echo "                                                         _|  "
 	@echo "                 _|_|_|_|_|                          _|_|    "
 	@echo "                                                             "
-	
+
 .PHONY:	fclean re all clean logo
