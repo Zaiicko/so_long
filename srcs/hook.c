@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 04:48:22 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/22 22:41:29 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/22 22:47:25 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	moves(t_data *data, int y, int x)
 		if (data->map.c_count == 0 && data->map.map_data[y][x] == 'E')
 		{
 			cleanup(data);
-			ft_printf("Gg wp");
+			ft_printf("Gg wp\n");
 			exit(0);
 		}
 	}
