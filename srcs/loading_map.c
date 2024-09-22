@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/20 04:14:04 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/22 21:36:21 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,12 @@ void	render_map(t_data *data)
 			if (data->map.map_data[y][x] == '1')
 				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 					data->sprites.wall, x * TILE_SIZE, y * TILE_SIZE);
-			else if (data->map.map_data[y][x] == 'E')
+			else if (data->map.map_data[y][x] == 'E' && data->map.c_count > 0)
 				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 					data->sprites.exit, x * TILE_SIZE, y * TILE_SIZE);
+			else if (data->map.map_data[y][x] == 'E')
+				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
+					data->sprites.exit_open, x * TILE_SIZE, y * TILE_SIZE);
 			else if (data->map.map_data[y][x] == 'C')
 				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 					data->sprites.collec, x * TILE_SIZE, y * TILE_SIZE);
@@ -101,6 +104,7 @@ void	loading_map(t_data *data, char *name)
 			data->screen_height, "Nibiru");
 	if (!data->win_ptr)
 		error_msg("Can't create the window with mlx");
+	loading_all_sprites(data);
 	render_floor(data);
 	render_map(data);
 }

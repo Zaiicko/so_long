@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/20 04:29:15 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/22 21:59:02 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ typedef struct s_data
 
 int	key_pressed(int keysym, t_data *data);
 void	loading_all_sprites(t_data *data);
-void	loading_a_sprite(t_data *data, void **sprite, char *path);
 void	error_msg(char *msg);
 void	check_args(int ac, char **av);
 int	check_if_ber(char *name);
@@ -88,3 +87,5 @@ void	check_screen_size(t_data *data);
 void	hook_managing(t_data *data);
 void	destroy_sprites(t_data *data);
 void	good_player_sprite(t_data *data, int y, int x);
+void	cleanup(t_data *data);
+void	cleanup_and_exit(t_data *data);

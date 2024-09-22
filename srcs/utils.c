@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 03:40:14 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/19 23:02:32 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/22 21:58:45 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,22 @@ char	**tab_dup(char **tab, size_t len)
 	}
 	new_tab[i] = NULL;
 	return (new_tab);
+}
+
+void	cleanup(t_data *data)
+{
+	destroy_sprites(data);
+	ft_free_tab(data->map.map_data);
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+//	mlx_destroy_display(data->mlx_ptr);
+	free(data->mlx_ptr);
+}
+
+void	cleanup_and_exit(t_data *data)
+{
+	destroy_sprites(data);
+	ft_free_tab(data->map.map_data);
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+//	mlx_destroy_display(data->mlx_ptr);
+	free(data->mlx_ptr);
 }

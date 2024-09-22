@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 04:48:22 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/21 02:42:07 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/22 22:00:14 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void	moves(t_data *data, int y, int x)
 		data->map.x_player = x;
 		if (data->map.map_data[y][x] == 'C')
 		{
-			if (data->map.c_count == 1)
-				data->sprites.exit = data->sprites.exit_open;
 			data->map.map_data[y][x] = '0';
 			data->map.c_count--;
 		}
@@ -47,7 +45,7 @@ void	moves(t_data *data, int y, int x)
 		render_map(data);
 		if (data->map.c_count == 0 && data->map.map_data[y][x] == 'E')
 		{
-			mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+			cleanup(data);
 			ft_printf("Gg wp");
 			exit(0);
 		}
@@ -58,7 +56,7 @@ int	key_pressed(int keycode, t_data *data)
 {
 	if (keycode == ESC_KEY)
 	{
-		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+		cleanup(data);
 		exit(0);
 	}
 	else if (keycode == UP_KEY || keycode == W_KEY)
@@ -81,11 +79,12 @@ void	destroy_sprites(t_data *data)
 	mlx_destroy_image(data->mlx_ptr, data->sprites.exit);
 	mlx_destroy_image(data->mlx_ptr, data->sprites.collec);
 	mlx_destroy_image(data->mlx_ptr, data->sprites.wall);
+	mlx_destroy_image(data->mlx_ptr, data->sprites.exit_open);
 }
 
 void	hook_managing(t_data *data)
 {
 	mlx_key_hook(data->win_ptr, key_pressed, data);
-	mlx_hook(data->win_ptr, 17, 0, (void *)exit, 0);
+	mlx_hook(data->win_ptr, 17, 0, (void *)cleanup_and_exit, data);
 	mlx_loop(data->mlx_ptr);
 }
