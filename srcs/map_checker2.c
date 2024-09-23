@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:49:17 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/20 01:07:14 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/23 18:51:17 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,28 @@ void	check_screen_size(t_data *data)
 	data->screen_width = data->map.width * TILE_SIZE;
 	if ((data->screen_height > HEIGHT_MACB_SCREEN)
 		|| (data->screen_width > WIDTH_MACB_SCREEN))
-		error_msg("The map are too huge for the screen size");
+		error_msg_free_tab("The map are too huge for the screen size\n",
+			data->map.map_data);
+}
+
+void	count_lines(t_data *data, char *name)
+{
+	int			fd;
+	int			i;
+	char		*line;
+
+	i = 0;
+	fd = open(name, O_RDONLY);
+	if (fd < 0)
+		error_msg("Can't open the map file\n");
+	line = get_next_line(fd);
+	while (line)
+	{
+		if (line[0])
+			i++;
+		free(line);
+		line = get_next_line(fd);
+	}
+	close(fd);
+	data->map.height = i;
 }

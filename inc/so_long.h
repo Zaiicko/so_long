@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/23 03:39:48 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/23 18:38:05 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,6 @@ void	good_player_sprite(t_data *data, int y, int x);
 void	cleanup(t_data *data);
 void	cleanup_and_exit(t_data *data);
 void	loading_a_sprite(t_data *data, void **sprite, char *path);
+void	error_msg_free_tab(char *msg, char **tab);
 
 #endif

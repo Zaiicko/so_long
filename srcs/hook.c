@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 04:48:22 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/22 22:47:25 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/23 19:00:32 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	key_pressed(int keycode, t_data *data)
 	if (keycode == ESC_KEY)
 	{
 		cleanup(data);
+		ft_printf("Did you really give up ?\n");
 		exit(0);
 	}
 	else if (keycode == UP_KEY || keycode == W_KEY)
@@ -68,18 +69,6 @@ int	key_pressed(int keycode, t_data *data)
 	else if (keycode == RIGHT_KEY || keycode == D_KEY)
 		moves(data, data->map.y_player, data->map.x_player + 1);
 	return (0);
-}
-
-void	destroy_sprites(t_data *data)
-{
-	mlx_destroy_image(data->mlx_ptr, data->sprites.player_right);
-	mlx_destroy_image(data->mlx_ptr, data->sprites.player_left);
-	mlx_destroy_image(data->mlx_ptr, data->sprites.player_back);
-	mlx_destroy_image(data->mlx_ptr, data->sprites.ground);
-	mlx_destroy_image(data->mlx_ptr, data->sprites.exit);
-	mlx_destroy_image(data->mlx_ptr, data->sprites.collec);
-	mlx_destroy_image(data->mlx_ptr, data->sprites.wall);
-	mlx_destroy_image(data->mlx_ptr, data->sprites.exit_open);
 }
 
 void	hook_managing(t_data *data)

@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 03:40:14 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/23 05:01:18 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/23 19:01:54 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,6 @@ void	error_msg(char *msg)
 {
 	write(2, msg, ft_strlen(msg));
 	exit(1);
-}
-
-void	count_lines(t_data *data, char *name)
-{
-	int			fd;
-	int			i;
-	char		*line;
-
-	i = 0;
-	fd = open(name, O_RDONLY);
-	if (fd < 0)
-		error_msg("Can't open the map file");
-	line = get_next_line(fd);
-	while (line)
-	{
-		if (line[0])
-			i++;
-		free(line);
-		line = get_next_line(fd);
-	}
-	close(fd);
-	data->map.height = i;
 }
 
 char	**tab_dup(char **tab, size_t len)
@@ -77,4 +55,11 @@ void	cleanup_and_exit(t_data *data)
 //	mlx_destroy_display(data->mlx_ptr);
 	free(data->mlx_ptr);
 	exit(0);
+}
+
+void	error_msg_free_tab(char *msg, char **tab)
+{
+	write(2, msg, ft_strlen(msg));
+	ft_free_tab(tab);
+	exit(1);
 }
