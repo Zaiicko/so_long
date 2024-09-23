@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 03:40:14 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/23 02:54:09 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/23 05:01:18 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error_msg(char *msg)
 {
-	ft_printf("Error\n%s\n", msg);
+	write(2, msg, ft_strlen(msg));
 	exit(1);
 }
 
