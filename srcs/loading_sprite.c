@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 03:35:12 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/23 18:57:13 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/24 17:05:31 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ void	loading_a_sprite(t_data *data, void **sprite, char *path)
 	if (!*sprite)
 	{
 		cleanup(data);
-		error_msg("Loading of sprites failed\n");
+		error_msg("Error\nLoading of sprites failed\n");
 	}
 }
