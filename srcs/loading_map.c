@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/23 18:50:52 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/24 04:38:19 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ void	extract_ber_data(t_data *data, char *name)
 	data->map.map_data = (char **)malloc(sizeof(char *)
 			* (data->map.height + 1));
 	if (!data->map.map_data)
-		error_msg("Malloc failed\n");
+		error_msg("Error\nMalloc failed\n");
 	i = 0;
 	fd = open(name, O_RDONLY);
 	if (fd < 0)
-		error_msg_free_tab("Can't open the map file\n", data->map.map_data);
+		error_msg_free_tab("Error\nCan't open the map file\n",
+			data->map.map_data);
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -108,7 +109,7 @@ void	loading_map(t_data *data, char *name)
 	data->win_ptr = mlx_new_window(data->mlx_ptr, data->screen_width,
 			data->screen_height, "Nibiru");
 	if (!data->win_ptr)
-		error_msg_free_tab("Can't create the window with mlx\n",
+		error_msg_free_tab("Error\nCan't create the window with mlx\n",
 			data->map.map_data);
 	loading_all_sprites(data);
 	render_floor(data);
