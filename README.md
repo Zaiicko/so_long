@@ -14,7 +14,7 @@
 
 ![gameplay_gif2](https://github.com/Zaiicko/so_long/blob/main/map.gif)
 
-<img width="564" alt="Sprites" src="https://github.com/user-attachments/assets/6bdb6e58-5769-4b9e-a21c-23ece01ce837">
+![template1](https://github.com/user-attachments/assets/ce9f0d0d-13d2-4fb0-9840-0ff06df0d97a)
 
 ## Features
 
