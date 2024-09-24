@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 04:48:22 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/23 19:00:32 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/24 03:30:04 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	moves(t_data *data, int y, int x)
 	good_player_sprite(data, y, x);
 	if (data->map.map_data[y][x] != '1')
 	{
+		ft_printf("Your number of movements : %d\n", data->move_count);
 		data->map.y_player = y;
 		data->map.x_player = x;
 		if (data->map.map_data[y][x] == 'C')
@@ -49,6 +50,7 @@ void	moves(t_data *data, int y, int x)
 			ft_printf("Gg wp\n");
 			exit(0);
 		}
+		data->move_count += 1;
 	}
 }
 
@@ -73,6 +75,7 @@ int	key_pressed(int keycode, t_data *data)
 
 void	hook_managing(t_data *data)
 {
+	data->move_count = 1;
 	mlx_key_hook(data->win_ptr, key_pressed, data);
 	mlx_hook(data->win_ptr, CLOSE_BUTTON, 0, (void *)cleanup_and_exit, data);
 	mlx_loop(data->mlx_ptr);

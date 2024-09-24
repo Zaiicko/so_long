@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:53:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/23 18:38:05 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/24 03:31:07 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ typedef struct s_data
 	void		*win_ptr;
 	int			screen_height;
 	int			screen_width;
+	size_t		move_count;
 	t_sprites	sprites;
 	t_map		map;
 }	t_data;
