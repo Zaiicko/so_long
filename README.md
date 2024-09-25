@@ -83,3 +83,7 @@ Here are the links to the assets used in the project :
 - [Wall_Sprite](https://opengameart.org/content/dead-tree-1)
 - [Exit_Sprite](https://www.vectorstock.com/royalty-free-vector/pixel-art-old-abandoned-house-isolated-vector-21959510)
 - [Ground_Sprite](https://kalponic-studio.itch.io/stylized-ground-textures?download)
+
+## Screenshot
+
+<img width="218" alt="Capture d’écran 2024-08-02 à 02 34 22" src="https://github.com/user-attachments/assets/7c97f9e1-1a4b-4fd6-a9fb-2cffc1a78794">
