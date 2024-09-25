@@ -14,7 +14,8 @@
 
 ![gameplay_gif2](https://github.com/Zaiicko/so_long/blob/main/map.gif)
 
-![template1](https://github.com/user-attachments/assets/ce9f0d0d-13d2-4fb0-9840-0ff06df0d97a)
+![Template_esmall](https://github.com/user-attachments/assets/a3643b3b-30b8-4203-a63c-c0e447ce8c5c)
+
 
 ## Features
 
