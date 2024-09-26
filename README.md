@@ -72,7 +72,7 @@ Here is an example of a valid `.ber` map file:
 
 ## System Compatibility
 
-This project is compatible with macOS and Linux systems.
+This project is compatible with both macOS and Linux systems, but there is a graphical issue where sprites are not rendering as transparent on Linux.
 
 ## Resources
 
