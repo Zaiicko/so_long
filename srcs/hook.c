@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 04:48:22 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/24 03:30:04 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/26 15:52:49 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,7 @@ void	moves(t_data *data, int y, int x)
 int	key_pressed(int keycode, t_data *data)
 {
 	if (keycode == ESC_KEY)
-	{
-		cleanup(data);
-		ft_printf("Did you really give up ?\n");
-		exit(0);
-	}
+		cleanup_and_exit(data);
 	else if (keycode == UP_KEY || keycode == W_KEY)
 		moves(data, data->map.y_player - 1, data->map.x_player);
 	else if (keycode == DOWN_KEY || keycode == S_KEY)

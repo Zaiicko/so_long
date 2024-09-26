@@ -6,7 +6,7 @@
 /*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 03:40:14 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/23 19:01:54 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/09/26 15:57:58 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	cleanup(t_data *data)
 	destroy_sprites(data);
 	ft_free_tab(data->map.map_data);
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+// IF ON LINUX the line under
 	//mlx_destroy_display(data->mlx_ptr);
-	free(data->mlx_ptr);
 }
 
 void	cleanup_and_exit(t_data *data)
@@ -52,8 +52,9 @@ void	cleanup_and_exit(t_data *data)
 	destroy_sprites(data);
 	ft_free_tab(data->map.map_data);
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+// IF ON LINUX the line under
 //	mlx_destroy_display(data->mlx_ptr);
-	free(data->mlx_ptr);
+	ft_printf("Did you really give up ?\n");
 	exit(0);
 }
 
