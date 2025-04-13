@@ -1,4 +1,4 @@
-# So_Long
+# So_Long  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![42 logo little](https://github.com/user-attachments/assets/4cecf5b8-a28e-49c5-a4b1-2030e571a0b3)
 
 [![Language: C](https://img.shields.io/badge/Language-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))  
 
